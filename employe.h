@@ -18,6 +18,7 @@ public:
     bool ajouter();
     bool supprimer(int id);
     QSqlQueryModel* afficher();
+    bool modifier(int id);
 private:
     int id;
     QString nom, prenom,post;

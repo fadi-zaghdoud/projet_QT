@@ -61,3 +61,19 @@ QSqlQueryModel* employe::afficher()
 return model;
 
 }
+bool employe::modifier(int id)
+{
+    QSqlQuery query;
+
+       QString res= QString::number(id);
+       query.prepare("UPDATE Employe SET id=:id,nom=:nom,prenom=:prenom ,post=:post WHERE id=:id");
+       query.bindValue(":id", id);
+       query.bindValue(":nom", nom);
+       query.bindValue(":prenom", prenom);
+       query.bindValue(":post", post);
+
+
+
+
+          return    query.exec();
+}
