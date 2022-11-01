@@ -1,3 +1,4 @@
+
 #include "employe.h"
 #include <QSqlQuery>
 #include <QtDebug>
@@ -72,8 +73,15 @@ bool employe::modifier(int id)
        query.bindValue(":prenom", prenom);
        query.bindValue(":post", post);
 
-
-
-
           return    query.exec();
+}
+
+QSqlQueryModel * employe::recherche_employe(QString search)
+{
+
+    QSqlQueryModel * model= new QSqlQueryModel();
+    QString qry="select * from Employe where id like '%"+search+"%' or nom like '%"+search+"%' or prenom like '%"+search+"%' or post like '%"+search+"%' ";
+    qDebug()<<qry;
+    model->setQuery(qry);
+    return model;
 }

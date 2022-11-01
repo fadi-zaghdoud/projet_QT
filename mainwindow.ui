@@ -410,6 +410,29 @@ QTableView::indicator:unchecked {
      </widget>
     </widget>
    </widget>
+   <widget class="QPushButton" name="pb_rechercher">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>330</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>rechercher</string>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="recherche">
+    <property name="geometry">
+     <rect>
+      <x>120</x>
+      <y>330</y>
+      <width>113</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">

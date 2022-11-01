@@ -117,3 +117,10 @@ void MainWindow::on_pb_modifier_clicked()
         }
 
 }
+
+void MainWindow::on_pb_rechercher_clicked()
+{
+
+    employe Etmp;
+    ui->tab_employe->setModel(Etmp.recherche_employe(ui->recherche->text()));
+}

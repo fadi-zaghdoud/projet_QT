@@ -22,6 +22,8 @@ private slots:
 
     void on_pb_modifier_clicked();
 
+    void on_pb_rechercher_clicked();
+
 private:
     Ui::MainWindow *ui;
     employe Etmp;
