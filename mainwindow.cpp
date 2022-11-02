@@ -8,9 +8,8 @@
 #include <qfiledialog.h>
 #include <QTextDocument>
 #include <QTextStream>
-#include <QComboBox>
 #include <QApplication>
-#include <QTableView>
+
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
