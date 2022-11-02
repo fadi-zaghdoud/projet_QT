@@ -3,6 +3,14 @@
 #include "employe.h"
 #include <QMessageBox>
 #include <QIntValidator>
+#include <QSqlQuery>
+#include <QScrollBar>
+#include <qfiledialog.h>
+#include <QTextDocument>
+#include <QTextStream>
+#include <QComboBox>
+#include <QApplication>
+#include <QTableView>
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -14,17 +22,17 @@ MainWindow::MainWindow(QWidget *parent) :
 
 {
     ui->le_post->addItem("Agent de piste");
-    ui->le_post->addItem("Agent d’entretien d’avion");
+    ui->le_post->addItem("Agent d entretien d avion");
     ui->le_post->addItem("Agent des litiges bagages");
-    ui->le_post->addItem("Agent d'accueil");
+    ui->le_post->addItem("Agent d accueil");
     ui->le_post->addItem("Employe de prestations alimentaires");
     ui->le_post->addItem("Service de netoyage");
 }
     {
         ui->le_post_3->addItem("Agent de piste");
-        ui->le_post_3->addItem("Agent d’entretien d’avion");
+        ui->le_post_3->addItem("Agent d entretien d avion");
         ui->le_post_3->addItem("Agent des litiges bagages");
-        ui->le_post_3->addItem("Agent d'accueil");
+        ui->le_post_3->addItem("Agent d accueil");
         ui->le_post_3->addItem("Employe de prestations alimentaires");
         ui->le_post_3->addItem("Service de netoyage");
     }
@@ -124,3 +132,34 @@ void MainWindow::on_pb_rechercher_clicked()
     employe Etmp;
     ui->tab_employe->setModel(Etmp.recherche_employe(ui->recherche->text()));
 }
+
+void MainWindow::on_pb_excel_clicked()
+{
+    employe Etmp;
+               QSqlQueryModel * model=new QSqlQueryModel();
+               model=Etmp.Find_employe();
+               QString textData= "id                       nom                         prenom                     post \n";
+               int rows=model->rowCount();
+               int columns=model->columnCount();
+               for (int i = 0; i < rows; i++)
+               {
+                   for (int j = 0; j < columns; j++)
+                   {
+                       textData += model->data(model->index(i,j)).toString();
+                       textData +=" ; ";
+                   }
+                   textData += "\n";
+               }
+               QString fileName = QFileDialog::getSaveFileName(this, "Export Excel", QString(), "*.csv");
+               if (!fileName.isEmpty())
+                   if (QFileInfo(fileName).suffix().isEmpty())
+                       fileName.append(".csv");
+               QFile csvfile(fileName);
+               if(csvfile.open(QIODevice::WriteOnly|QIODevice::Truncate))
+               {
+                   QTextStream out(&csvfile);
+                   out<<textData;
+               }
+               csvfile.close();
+}
+

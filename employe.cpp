@@ -75,6 +75,16 @@ bool employe::modifier(int id)
 
           return    query.exec();
 }
+QSqlQueryModel * employe::Find_employe()
+{
+    QSqlQueryModel * model = new QSqlQueryModel();
+    QSqlQuery query;
+    query.prepare("SELECT NOM, ID, PRENOM, POST FROM Employe");
+
+    query.exec();
+    model->setQuery(query);
+    return model;
+}
 
 QSqlQueryModel * employe::recherche_employe(QString search)
 {

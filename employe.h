@@ -19,6 +19,7 @@ public:
     bool supprimer(int id);
     QSqlQueryModel* afficher();
     bool modifier(int id);
+        QSqlQueryModel* Find_employe();
     QSqlQueryModel* recherche_employe(QString search);
 private:
     int id;

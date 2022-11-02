@@ -24,6 +24,10 @@ private slots:
 
     void on_pb_rechercher_clicked();
 
+
+    void on_pb_excel_clicked();
+
+
 private:
     Ui::MainWindow *ui;
     employe Etmp;
