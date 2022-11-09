@@ -1,15 +1,21 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "employe.h"
+#include <QApplication>
 #include <QMessageBox>
+#include <QTableView>
+#include <qmessagebox.h>
 #include <QIntValidator>
 #include <QSqlQuery>
 #include <QScrollBar>
 #include <qfiledialog.h>
+#include <QtPrintSupport/QPrinter>
+#include <QtPrintSupport/QPrintDialog>
 #include <QTextDocument>
 #include <QTextStream>
-#include <QApplication>
-
+#include <QDate>
+#include <QComboBox>
+#include "qcustomplot.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -160,5 +166,20 @@ void MainWindow::on_pb_excel_clicked()
                    out<<textData;
                }
                csvfile.close();
+}
+
+
+
+
+
+void MainWindow::on_id_clicked()
+{
+    ui->tab_employe->setModel(Etmp.triID());
+}
+
+void MainWindow::on_nom_clicked()
+{
+    ui->tab_employe->setModel(Etmp.triNOM());
+
 }
 

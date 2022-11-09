@@ -24,9 +24,15 @@ private slots:
 
     void on_pb_rechercher_clicked();
 
-
     void on_pb_excel_clicked();
 
+    void on_id_clicked();
+
+    void on_nom_clicked();
+
+    void on_pb_imprimer_clicked();
+
+    void on_pb_stat_clicked();
 
 private:
     Ui::MainWindow *ui;

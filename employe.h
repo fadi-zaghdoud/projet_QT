@@ -2,6 +2,7 @@
 #define EMPLOYE_H
 #include <QString>
 #include <QSqlQueryModel>
+#include "qcustomplot.h"
 class employe
 {
 public:
@@ -21,6 +22,8 @@ public:
     bool modifier(int id);
     QSqlQueryModel* Find_employe();
     QSqlQueryModel* recherche_employe(QString search);
+    QSqlQueryModel* triID();
+    QSqlQueryModel* triNOM();
 private:
     int id;
     QString nom, prenom,post;

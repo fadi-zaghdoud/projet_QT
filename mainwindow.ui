@@ -17,8 +17,8 @@
    <widget class="QTabWidget" name="tabWidget">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>20</y>
+      <x>10</x>
+      <y>10</y>
       <width>431</width>
       <height>301</height>
      </rect>
@@ -319,34 +319,6 @@ border-radius: 8px;
       </property>
      </widget>
     </widget>
-    <widget class="QWidget" name="tab_5">
-     <attribute name="title">
-      <string>Afficher</string>
-     </attribute>
-     <widget class="QTableView" name="tab_employe">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>431</width>
-        <height>271</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QTableView {
-    selection-background-color: qlineargradient(x1: 0, y1: 0, x2: 0.5, y2: 0.5,
-                                stop: 0 #4ccaff, stop: 1 black);
-}
-QTableView QTableCornerButton::section {
-    background: blue;
-    border: 2px outset blue;
-}
-QTableView::indicator:unchecked {
-    background-color: #d7d6d5
-}</string>
-      </property>
-     </widget>
-    </widget>
     <widget class="QWidget" name="tab_3">
      <attribute name="title">
       <string>modifier</string>
@@ -524,8 +496,8 @@ border-radius: 8px;
    <widget class="QPushButton" name="pb_rechercher">
     <property name="geometry">
      <rect>
-      <x>20</x>
-      <y>330</y>
+      <x>450</x>
+      <y>30</y>
       <width>124</width>
       <height>23</height>
      </rect>
@@ -556,8 +528,8 @@ font: 75 12pt &quot;NSimSun&quot;;
    <widget class="QLineEdit" name="recherche">
     <property name="geometry">
      <rect>
-      <x>160</x>
-      <y>330</y>
+      <x>590</x>
+      <y>30</y>
       <width>121</width>
       <height>22</height>
      </rect>
@@ -574,8 +546,8 @@ border-radius: 8px;
    <widget class="QPushButton" name="pb_excel">
     <property name="geometry">
      <rect>
-      <x>470</x>
-      <y>40</y>
+      <x>1060</x>
+      <y>30</y>
       <width>124</width>
       <height>23</height>
      </rect>
@@ -606,8 +578,8 @@ font: 75 12pt &quot;NSimSun&quot;;
    <widget class="QCheckBox" name="checkBox">
     <property name="geometry">
      <rect>
-      <x>570</x>
-      <y>30</y>
+      <x>970</x>
+      <y>20</y>
       <width>101</width>
       <height>41</height>
      </rect>
@@ -632,11 +604,118 @@ font: 75 12pt &quot;NSimSun&quot;;
      <bool>false</bool>
     </property>
    </widget>
+   <widget class="QTableView" name="tab_employe">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>70</y>
+      <width>731</width>
+      <height>241</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QTableView {
+    selection-background-color: qlineargradient(x1: 0, y1: 0, x2: 0.5, y2: 0.5,
+                                stop: 0 #4ccaff, stop: 1 black);
+}
+QTableView QTableCornerButton::section {
+    background: blue;
+    border: 2px outset blue;
+}
+QTableView::indicator:unchecked {
+    background-color: #d7d6d5
+}</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="id">
+    <property name="geometry">
+     <rect>
+      <x>550</x>
+      <y>330</y>
+      <width>124</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+color: rgb(245, 245, 245);
+background-color: rgb(0, 0, 255);
+border-width: 1px;
+border-color: rgb(0, 0, 255);
+border-style: solid;
+border-radius: 7;
+padding: 3px;
+font-size: 75 ;
+padding-left: 1px;
+padding-right: 1px;
+min-width: 120px;
+max-width: 50px;
+min-height: 15px;
+max-height: 15px;
+font: 75 12pt &quot;NSimSun&quot;;
+}</string>
+    </property>
+    <property name="text">
+     <string>id</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="nom">
+    <property name="geometry">
+     <rect>
+      <x>690</x>
+      <y>330</y>
+      <width>124</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+color: rgb(245, 245, 245);
+background-color: rgb(0, 0, 255);
+border-width: 1px;
+border-color: rgb(0, 0, 255);
+border-style: solid;
+border-radius: 7;
+padding: 3px;
+font-size: 75 ;
+padding-left: 1px;
+padding-right: 1px;
+min-width: 120px;
+max-width: 50px;
+min-height: 15px;
+max-height: 15px;
+font: 75 12pt &quot;NSimSun&quot;;
+}</string>
+    </property>
+    <property name="text">
+     <string>nom</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>330</y>
+      <width>121</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 75 12pt &quot;NSimSun&quot;;</string>
+    </property>
+    <property name="text">
+     <string>trier par:</string>
+    </property>
+   </widget>
    <zorder>checkBox</zorder>
    <zorder>tabWidget</zorder>
    <zorder>pb_rechercher</zorder>
    <zorder>recherche</zorder>
    <zorder>pb_excel</zorder>
+   <zorder>tab_employe</zorder>
+   <zorder>id</zorder>
+   <zorder>nom</zorder>
+   <zorder>label_6</zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">

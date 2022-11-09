@@ -3,6 +3,7 @@
 #include <QSqlQuery>
 #include <QtDebug>
 #include <QObject>
+#include "qcustomplot.h"
 
 employe::employe()
 {
@@ -94,4 +95,18 @@ QSqlQueryModel * employe::recherche_employe(QString search)
     qDebug()<<qry;
     model->setQuery(qry);
     return model;
+}
+QSqlQueryModel * employe::triID()
+{
+    QSqlQueryModel * model= new QSqlQueryModel();
+    model->setQuery("SELECT * FROM Employe ORDER BY id");
+    return model;
+
+}
+QSqlQueryModel * employe::triNOM()
+{
+    QSqlQueryModel * model= new QSqlQueryModel();
+    model->setQuery("SELECT * FROM Employe ORDER BY nom");
+    return model;
+
 }
