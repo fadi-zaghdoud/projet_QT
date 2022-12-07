@@ -4,14 +4,17 @@
 #
 #-------------------------------------------------
 
-QT       += core gui sql charts serialport network printsupport
-
-QT       += core gui multimedia multimediawidgets
-QT       +=widgets
-QT +=svg
+QT       += core gui sql network multimedia multimediawidgets charts printsupport widgets axcontainer
 QT +=charts
-QT +=printsupport
-QT += serialport
+greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+CONFIG += c++11
+QT       += core gui  serialport
+
+QT += network
+
+QT+= printsupport
+TARGET = QtCustomProgressbar
+TEMPLATE = app
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = Atelier_Connexion
@@ -26,38 +29,53 @@ DEFINES += QT_DEPRECATED_WARNINGS
 # You can also make your code fail to compile if you use deprecated APIs.
 # In order to do so, uncomment the following line.
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
-#DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
+DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 CONFIG += c++11
 
 SOURCES += \
+    QrCode.cpp \
     arduino.cpp \
+    calendrier.cpp \
+    camera.cpp \
     employe.cpp \
-    integration.cpp \
+    gvol.cpp \
+    gvoyageur.cpp \
     login.cpp \
         main.cpp \
         mainwindow.cpp \
     connection.cpp \
-    qrcode.cpp \
+    materiel.cpp \
+    pdf.cpp \
     qrcodegeneratordemo.cpp \
-    qrcodegeneratorworker.cpp \
+    qrcodegenratorworke.cpp \
     qrwidget.cpp \
+    reclamation.cpp \
+    smtp.cpp
 
 HEADERS += \
+    QrCode.hpp \
     arduino.h \
+    calendrier.h \
+    camera.h \
     employe.h \
-    integration.h \
+    gvol.h \
+    gvoyageur.h \
     login.h \
         mainwindow.h \
     connection.h \
-    qrcode.h \
-    qrcodegenratorworker.h \
-    qrwidget.h
+    materiel.h \
+    pdf.h \
+    qrcodegenratorworke.h \
+    qrwidget.h \
+    reclamation.h \
+    smtp.h
 
 FORMS += \
-        integration.ui \
+        camera.ui \
         login.ui \
-        mainwindow.ui
+        mainwindow.ui \
+        pdf.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
