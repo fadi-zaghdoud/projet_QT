@@ -1,4 +1,3 @@
-
 #include "arduino.h"
 
 #include "QDebug"
@@ -62,3 +61,4 @@ QByteArray Arduino::read_from_arduino()
         return ID;
    }
 }
+

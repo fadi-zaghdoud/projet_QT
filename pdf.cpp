@@ -9,7 +9,7 @@
 #include<QUrl>
 
 pdf::pdf(QWidget *parent) :
-    QMainWindow(parent),
+    QDialog(parent),
     ui(new Ui::pdf)
 {
     ui->setupUi(this);

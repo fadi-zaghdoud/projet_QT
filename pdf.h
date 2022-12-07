@@ -1,20 +1,21 @@
 #ifndef PDF_H
 #define PDF_H
 
-#include <QMainWindow>
+#include <QDialog>
 
 namespace Ui {
 class pdf;
 }
 
-class pdf : public QMainWindow
+class pdf : public QDialog
 {
     Q_OBJECT
 
 public:
     explicit pdf(QWidget *parent = nullptr);
     ~pdf();
-private slots :
+
+private slots:
     void on_pushButton_clicked();
 
 private:
